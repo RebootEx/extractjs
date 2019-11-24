@@ -2,7 +2,8 @@
 
 cd /root/script/3_httprobe
 #创建目录
-vl -s 50 httprobe.txt | grep -v "\[50" | grep -oP "http.*" >> /root/script/3_httprobe/httprobe1.txt ; sort -u httprobe1.txt -o httprobe1.txt
+vl -s 50 httprobe.txt | grep -v "\[50" | grep -oP "http.*" >> /root/script/3_httprobe/httprobe1.txt 
+sort -u httprobe1.txt -o httprobe1.txt
 
 input=httprobe1.txt ; export input=httprobe1.txt
 i=1
@@ -28,20 +29,14 @@ rm /root/script/3_httprobe/exe.sh
 rm dir_* -r
 rm httprobe1.txt
 
-grep -oP "http.*" /root/script/3_httprobe/getjs.txt > /root/script/3_httprobe/getjs123.txt ; mv /root/script/3_httprobe/getjs123.txt /root/script/3_httprobe/getjs.txt
+grep -oP "http.*" /root/script/3_httprobe/getjs.txt > /root/script/3_httprobe/getjs123.txt 
+mv /root/script/3_httprobe/getjs123.txt /root/script/3_httprobe/getjs.txt
 sort -u /root/script/3_httprobe/getjs.txt -o /root/script/3_httprobe/getjs.txt
 ls ; wc -l /root/script/3_httprobe/getjs.txt
 
 
-
-
-
-
-
-
 #LinkFinder
 
-#创建目录
 input=getjs.txt ; export input=getjs.txt
 i=1
 echo '#!/bin/bash' >> /root/script/3_httprobe/exe.sh
